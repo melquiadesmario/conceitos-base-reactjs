@@ -1,33 +1,13 @@
-interface ICardprops{
-  title: string
-  children: React.ReactNode
-}
-
-const Card = (props: ICardprops) => {
-  return(
-    <div style={{ border: '1px solid black'}}>
-      <span>Title: { props.title }</span>
-      <div>
-        { props.children }
-      </div>
-      <div>
-        Footer
-      </div>
-    </div>
-  )
-}
-
+import { useState } from "react"
 
 export function App() {
+  const [count, setCount] = useState(0)
 
   return (
     <div>
-      Ola
-
-      <p>Card:</p>
-      <Card title='teste'>
-        Teste
-      </Card>
+      <button onClick={() => setCount(count + 1)}>
+        { count }
+      </button>
     </div>
   )
 }
